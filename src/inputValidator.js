@@ -7,6 +7,7 @@ function getFieldName(index) {
 
 // Function to check the validity of an entry in the cron field
 function checkValidEntry(entry , fieldIndex ){
+    try{
         const numericValue = Number(entry);
 
         if (isNaN(numericValue) || !Number.isInteger(numericValue)) {
@@ -20,6 +21,14 @@ function checkValidEntry(entry , fieldIndex ){
             // console.log(`Entry for ${getFieldName(fieldIndex)} field should be in the range of 0-${upperLimits[fieldIndex]}`);
             // process.exit(1); // Terminate the program with an error code
         } 
+
+    }catch (error) {   
+            if (process.env.NODE_ENV !== 'test') {
+                console.error(`Error: ${error.message}`);
+                process.exit(1);
+            }
+            throw error;
+    }
        
 }
 
