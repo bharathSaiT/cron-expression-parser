@@ -5,8 +5,9 @@ const {createTableBorder}  = require('./tableFormatter');
 
 function main() {
     if (process.argv.length !== 3) {
-        console.log(`Usage: ${process.argv[1]} <cron_expression>`);
-        process.exit(1);
+        throw new Error(`Usage: ${process.argv[1]} <cron_expression>`);
+        // console.log(`Usage: ${process.argv[1]} <cron_expression>`);
+        // process.exit(1);
     }
 
     const cronExpression = process.argv[2];
@@ -33,3 +34,5 @@ function main() {
 if (require.main === module) {
     main();
 }
+
+module.exports = { main };

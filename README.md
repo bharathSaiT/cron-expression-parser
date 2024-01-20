@@ -56,10 +56,19 @@ Hyphens define ranges. For example, 2000-2010 indicates every year between 2000 
 For more details on CRON expressions, you can refer to the [Wikipedia page](https://en.wikipedia.org/wiki/Cron#CRON_expression).
 
 
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+
 ## Tech Stack
 
 - Node.js
 - JavaScript
+- Jest
 
 
 ## Authors

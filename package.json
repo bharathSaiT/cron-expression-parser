@@ -7,7 +7,11 @@
     "cep": "src/main.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "roots": ["src", "test"]
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/bharathSaiT/cron-expression-parser/issues"
   },
-  "homepage": "https://github.com/bharathSaiT/cron-expression-parser#readme"
+  "homepage": "https://github.com/bharathSaiT/cron-expression-parser#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }

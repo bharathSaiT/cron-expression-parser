@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const  {expandCronField} = require('./expandCronField');
 
 function parseCronExpression(cronExpression) {
@@ -9,8 +7,7 @@ function parseCronExpression(cronExpression) {
     const cronValues = cronExpression.split(' ');
 
     if(cronValues.length > 6){
-        console.error("The cron expression doesn't have the exact expected 6 fields");
-        process.exit(1);
+        throw new Error("The cron expression doesn't have the exact expected 6 fields");
     }
     
     // Generate minute, hour, day of month, month, day of week values
