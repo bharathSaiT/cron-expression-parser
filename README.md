@@ -69,9 +69,3 @@ To run tests, run the following command
 - Node.js
 - JavaScript
 - Jest
-
-
-## Authors
-
-- [@bharathSaiT](https://github.com/bharathSaiT
-
