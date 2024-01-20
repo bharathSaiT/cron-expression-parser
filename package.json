@@ -1,0 +1,22 @@
+{
+  "name": "cron-expression-parser",
+  "version": "1.0.0",
+  "description": "Parse Cron Expressions",
+  "main": "main.js",
+  "bin": {
+    "cep": "src/main.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharathSaiT/cron-expression-parser.git"
+  },
+  "author": "Bharath Sai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bharathSaiT/cron-expression-parser/issues"
+  },
+  "homepage": "https://github.com/bharathSaiT/cron-expression-parser#readme"
+}
