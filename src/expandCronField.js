@@ -26,7 +26,7 @@ function expandCronField(cronFieldValue, index) {
     // Special case for the day of the week (convert 7 to 0 for Sunday)
     if (index === 4) {
         result.forEach((day, i, arr) => arr[i] = (day === '7') ? '0' : day);
-        result.sort();
+        // result.sort();
         result = [...new Set(result)];
     }
 
@@ -37,13 +37,32 @@ function expandCronField(cronFieldValue, index) {
 function fieldWithRange(entry , intervalCheck ,frequency, fieldIndex){
     const result =[];
     const [start, end] = entry.split('-').map(Number);
+    console.log(start ,end);
+
+    //start < end >>all good
+    //start > end 
+        // start - upperlimit
+        // = - end
+    
     // Check the validity of entry in the cron expression
     checkValidEntry(start , fieldIndex );
     checkValidEntry(end , fieldIndex );
-    for (let i = start; i <= end; i=i+ Number(frequency)) {
-        result.push(i.toString());
+    if(start <= end){
+        for (let i = start; i <= end; i=i+ Number(frequency)) {
+            result.push(i.toString());
+        }
+        return result;
     }
-    return result;
+    else{
+        for (let i = start; i <= 7; i=i+ Number(frequency)) {
+            result.push(i.toString());
+        }
+        for (let i = 0; i <= end; i=i+ Number(frequency)) {
+            result.push(i.toString());
+        }
+        return result;
+    }
+    
 }
 
 // Function to handle cron field entries without a range
